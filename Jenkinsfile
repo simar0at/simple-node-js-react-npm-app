@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm config set cache $(pwd)/.npm-cache && npm install' 
+                sh 'export NPM_CONFIG_GLOBALCONFIG="$(pwd)/npmrc" && npm config set cache $(pwd)/.npm-cache && npm install' 
             }
         }
     }
