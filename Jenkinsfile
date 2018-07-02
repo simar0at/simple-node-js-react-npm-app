@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'npm install' 
+                sh 'npm config set cache $(pwd)/.npm --global && npm install' 
             }
         }
     }
